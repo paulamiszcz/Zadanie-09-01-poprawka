@@ -39,17 +39,19 @@ public class Person {
     }
 
 
-    public Person(String firstName, String lastName, int age, String pesel)throws NameUndefinedException, IncorrectAgeException {
-        if (firstName == null || firstName.length() > 2) {
+    public Person(String firstName, String lastName, int age, String pesel) throws NameUndefinedException, IncorrectAgeException {
+        if (firstName == null || firstName.length() < 2 || lastName == null || lastName.length() < 2) {
             throw new NameUndefinedException();
         } else {
             this.firstName = firstName;
-        }
-        if (lastName == null || lastName.length() > 2) {
-            throw new NameUndefinedException();
-        } else {
             this.lastName = lastName;
         }
+        //if (lastName == null || lastName.length() > 2) {
+          //  throw new NameUndefinedException();
+        //} else {
+          //  this.lastName = lastName;
+        //}
+
         if (age < 1) {
             throw new IncorrectAgeException();
         } else {

@@ -10,6 +10,7 @@ public class Test {
         String lasName = scan.nextLine();
         //System.out.println("Podaj wiek: ");
         int age = scan.nextInt();
+        scan.nextLine();
         //System.out.println("Podaj nr pesel: ");
         String pesl = scan.nextLine();
 
@@ -17,10 +18,11 @@ public class Test {
 
         try{
             person = new Person(firName,lasName,age,pesl);
+            System.out.println(person.toString());
         }catch (NameUndefinedException blad1){
-            System.out.println("za krótkie nazwisko!");
+            System.out.println(blad1.getMessage());
         }catch (IncorrectAgeException blad2){
-            System.out.println("wiek jest nieprawidłowy");
+            System.out.println(blad2.getMessage());
         }finally {
             System.out.println(person);
         }
